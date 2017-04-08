@@ -119,7 +119,7 @@ padding-left: 25px;
       <ul class="nav navbar-nav navbar-right"  >
 
         <li><a href="#">Welcome <c:out value="${sessionScope.userID}"></c:out> </a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="Login.htm">Logout</a></li>
       </ul>
        <div class="col-sm-2 col-md-2">
         <form class="navbar-form" role="search">

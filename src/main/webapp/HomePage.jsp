@@ -88,13 +88,14 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href='Login.htm'><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li><a href='addUser.htm'><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
       
       </ul>
     </div>
   </div>
 
   <footer class="footer navbar-fixed-bottom"">
-  <p> Theme Made By Ruchi Goyal</p> 
+  <p> Theme Made By Team Ultron</p> 
 </footer>
 </nav>
 

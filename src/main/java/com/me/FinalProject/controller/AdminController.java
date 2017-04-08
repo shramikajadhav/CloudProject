@@ -26,10 +26,10 @@ public class AdminController {
 	public void setAdminDAO(AdminDAO adminDAO){
 		this.adminDAO = adminDAO;
 	}
-	@RequestMapping(value= "/addUser.htm",method= RequestMethod.GET)
-     public String addUserPage(){
-     return "addUser";
-	}
+//	@RequestMapping(value= "/addUser.htm",method= RequestMethod.GET)
+//     public String addUserPage(){
+//     return "addUser";
+//	}
 	@RequestMapping(value= "/Customer.htm",method= RequestMethod.GET)
     public String CustomerPage(){
     return "Customer";
@@ -40,20 +40,28 @@ public class AdminController {
 		return "Admin";
 }
 	
-	@RequestMapping(value="/addUser.htm",method=RequestMethod.POST)
-public String addUser(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName,@RequestParam("address") String address,@RequestParam("email") String email,@RequestParam("zipCode") int zipCode,@RequestParam("category") String category,@RequestParam("userID") String UserID,@RequestParam("status") String status,HttpServletRequest request,HttpServletResponse response) throws Exception{
-		User user = adminDAO.saveUser(firstName, lastName, email, address, zipCode, category,UserID,status);
-		
-		JSONObject object = new JSONObject();
-		PrintWriter out = response.getWriter();
-		if(user.getUserID() != null){
-			object.put("useradded", "User with UserID"+ UserID+"is created");
-			out.print(object);
-			return null;	
+//	@RequestMapping(value="/addUser.htm",method=RequestMethod.POST)
+//public String addUser(@RequestParam("firstName") String firstName,@RequestParam("lastName") String lastName,@RequestParam("address") String address,@RequestParam("email") String email,@RequestParam("zipCode") int zipCode,@RequestParam("category") String category,@RequestParam("userID") String UserID,@RequestParam("status") String status,HttpServletRequest request,HttpServletResponse response) throws Exception{
+//		User user = adminDAO.saveUser(firstName, lastName, email, address, zipCode, category,UserID,status);
+//		
+//		JSONObject object = new JSONObject();
+//		PrintWriter out = response.getWriter();
+//		if(user.getUserID() != null){
+//			object.put("useradded", "User with UserID"+ UserID+"is created");
+//			out.print(object);
+//			return null;	
+//		}
+//		return null;
+//	}
+	//Adding logout method
+	@RequestMapping(value="/logout.htm",method = RequestMethod.POST)
+	public String logOut(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if(session != null){
+			 session.invalidate();
 		}
-		return null;
+		return "Login";
 	}
-	
 	@RequestMapping(value="/UpdatePassword.htm",method= RequestMethod.GET)
 	public String updatePasswordPage()
 	{

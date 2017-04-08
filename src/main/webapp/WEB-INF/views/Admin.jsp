@@ -85,7 +85,7 @@ footer {
                         <li><a href="#">My Profile</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                <li><a href="Login.htm"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
             </ul>
         </div>
     </div>
@@ -112,7 +112,7 @@ footer {
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a></li>
                        
                        
-                        <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                        <li><a href="Login.htm"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
                     </ul>
                 </li>
               
