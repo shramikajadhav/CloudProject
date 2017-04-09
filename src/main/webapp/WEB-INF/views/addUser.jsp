@@ -118,6 +118,7 @@ function GetXmlHttpObject(){
 </table>
 <br></br>
 <input type='submit' value='CREATE' class='btn btn-info' align='center'>
+<a href="login.htm" class="btn btn-default">Return to Login</a>
 </form>
 </div>
 </div>
