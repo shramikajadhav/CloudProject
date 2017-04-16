@@ -95,6 +95,8 @@
   </div>
 
   <footer class="footer navbar-fixed-bottom"">
+    <p> Hello From Other Side...Adelle <3</p>
+     <p> Shape of You<3</p>
   <p> Theme Made By Team Ultron</p> 
 </footer>
 </nav>
