@@ -89,7 +89,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href='Login.htm'><span class="glyphicon glyphicon-user"></span> Login</a></li>
         <li><a href='addUser.htm'><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
-      
+      <li><a href='#'><span class="glyphicon glyphicon-user"></span> Hello</a></li>
       </ul>
     </div>
   </div>
