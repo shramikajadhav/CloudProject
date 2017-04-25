@@ -5,10 +5,10 @@ deploy:
  - provider: s3
    access_key_id: $AWS_ACCESS_KEY
    secret_access_key: $AWS_SECRET_KEY
-   bucket: cloudprojstorage
+   local_dir: dpl_cd_upload
    skip_cleanup: true
    on: &2
-    repo: CloudProject
+    repo: shramikajadhav/CloudProject
     bucket: cloudprojstorage
     region: us-east-1
     provider : codedeploy
@@ -21,8 +21,9 @@ deploy:
     deployment_group: CloudProject
     region : us-east-1c
     on : *2
-
+    before_script : 'npm test'
     script:
+    -npm test
     - zip -r latest *
     - mkdir -p dpl_cd_upload
     - mv latest.zip dpl_cd_upload/latest.zip
