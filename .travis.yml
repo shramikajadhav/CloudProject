@@ -9,7 +9,7 @@ deploy:
   bucket: cloudprojstorage
   skip_cleanup: true
   on: &2
-       repo: shramikajadhav/CloudProject
+       repo: CloudProject
        bucket: cloudprojstorage
        region: us-east-1
 - provider : codedeploy
