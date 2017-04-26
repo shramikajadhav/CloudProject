@@ -20,7 +20,7 @@ deploy:
   bundle_type : zip
   application: TeamUltrom
   deployment_group: CloudProject
-  region : us-east-1c
+  region : us-east-1
   on : *2	
 
 script:
