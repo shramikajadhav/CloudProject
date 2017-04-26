@@ -11,7 +11,7 @@ deploy:
   on: &2
        repo: shramikajadhav/CloudProject
        bucket: cloudprojstorage
-       region: us-east-1
+       region: us-east-1c
 - provider : codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
@@ -20,7 +20,7 @@ deploy:
   bundle_type : zip
   application: TeamUltrom
   deployment_group: CloudProject
-  region : us-east-1
+  region : us-east-1c
   on : *2	
 
 script:
