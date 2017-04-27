@@ -6,20 +6,20 @@ deploy:
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: cloudultron
+  bucket: cloudprojstorage
   skip_cleanup: true
   on: &2
        repo: shramikajadhav/CloudProject
-       bucket: cloudultron
+       bucket: cloudprojstorage
        region: us-east-1
 - provider : codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: cloudultron
+  bucket: cloudprojstorage
   key: latest.zip
   bundle_type : zip
-  application: TestApplication
-  deployment_group: TestApplication
+  application: TeamUltron
+  deployment_group: CloudProject
   region : us-east-1
   on : *2	
 
