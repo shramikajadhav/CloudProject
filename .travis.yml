@@ -1,29 +1,38 @@
 language: java
-java: 
-- 1.8
+java:
+  - 1.8
+sudo: false
+install: true
 
 deploy:
-- provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: cloudprojstorage
-  skip_cleanup: true
-  on: &2
-       repo: shramikajadhav/CloudProject
-       bucket: cloudprojstorage
-       region: us-east-1
-- provider : codedeploy
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: cloudprojstorage
-  key: latest.zip
-  bundle_type : zip
-  application: TeamUltron
-  deployment_group: CloudProject
-  region : us-east-1
-  on : *2	
-
-script:
-- zip -r latest *
-- mkdir -p dpl_cd_upload
-- mv latest.zip dpl_cd_upload/latest.zip
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    local_dir: dpl_cd_upload
+    bucket: cloudultron
+    region: us-east-1
+    skip_cleanup: true
+    acl: public_read
+    detect_encoding: true
+    on:
+      repo: shramikajadhav/CloudProject
+      all_branches: true
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: cloudultron
+    key: cloud.zip
+    bundle_type: zip
+    application: TestApplication
+    deployment_group: TestApplication
+    region: us-east-1
+    on:
+      repo: shramikajadhav/CloudProject
+      all_branches: true
+after_deploy:
+  - echo "Performing after deploy procedures..."
+notifications:
+  email:
+    recipients:
+      - shrams6194@gmail.com
+     
